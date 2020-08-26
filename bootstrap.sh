@@ -147,13 +147,13 @@ sync_repo       "$APP_PATH" \
                 "$REPO_BRANCH" \
                 "$app_name"
 
-create_symlinks "$APP_PATH" \
-                "$HOME"
-
-sync_repo       "$HOME/.vim/bundle/vundle" \
+sync_repo       "$APP_PATH/.vim/bundle/vundle" \
                 "$VUNDLE_URI" \
                 "master" \
                 "vundle"
+
+create_symlinks "$APP_PATH" \
+                "$HOME"
 
 setup_vundle    "$APP_PATH/.vimrc.bundles.default"
 
