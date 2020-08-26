@@ -9,7 +9,7 @@ silent function! WINDOWS()
     return  (has('win32') || has('win64'))
 endfunction
 
-" Basic 
+" Basic
 set nocompatible        " Must be first line
 if !WINDOWS()
     set shell=/bin/sh
@@ -44,7 +44,7 @@ noremap <leader>bg :call ToggleBG()<CR>
 filetype plugin indent on   " Automatically detect file types.
 syntax on                   " Syntax highlighting
 scriptencoding utf-8
-set mouse=a                 " Automatically enable mouse usage
+" E538: No mouse support: mouse=a set mouse=a                 " Automatically enable mouse usage
 set mousehide               " Hide the mouse cursor while typing
 set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
 set viewoptions=folds,options,cursor,unix,slash " Better Unix / Windows compatibility
@@ -104,7 +104,7 @@ set wildmode=list:longest,full  " Command <Tab> completion, list matches, then l
 set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
 set scrolljump=5                " Lines to scroll when cursor leaves screen
 set scrolloff=3                 " Minimum lines to keep above and below cursor
-set foldenable                  " Auto fold code
+" Unknown option set foldenable                  " Auto fold code
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
@@ -267,7 +267,7 @@ endif
 
 
 
-" Functions 
+" Functions
 function! InitializeDirectories()
     let parent = $HOME
     let prefix = 'vim'
@@ -305,7 +305,7 @@ endfunction
 call InitializeDirectories()
 
 function! NERDTreeInitAsNeeded()
-    redir => bufoutput
+"Invalid argument    redir => bufoutput
     buffers!
     redir END
     let idx = stridx(bufoutput, "NERD_tree")
